@@ -13,7 +13,7 @@ function addDiv() {
   const modTime = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
 
   const inputValue = document.querySelector("#inputValue").value;
-  newDiv.innerHTML = `<span>New contaier <br> name:</span> ${inputValue} <p> created on: ${modDate} <br> created at: ${modTime} </p>`;
+  newDiv.innerHTML = `<span>New task <br> description:</span> ${inputValue} <p> created on: ${modDate} <br> created at: ${modTime} </p>`;
   newDiv.style.margin = "15px 10%";
   document.body.append(newDiv);
 
@@ -34,10 +34,10 @@ function addDiv() {
   deleteButton.addEventListener("click", del);
 
   const clearButton = document.createElement("button");
-  clearButton.innerHTML = "Clear";
+  clearButton.innerHTML = "Done";
   newDiv.append(clearButton);
   function clear() {
-    newDiv.innerHTML = `Cleared <br> <p> on : ${new Date()} </p>`;
+    newDiv.innerHTML = `Finished <br> <p> on : ${new Date()} </p>`;
     newDiv.style.backgroundColor = "white";
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Delete";
@@ -50,7 +50,7 @@ function addDiv() {
 
   function addInnerDiv(bgColor) {
     const innerDiv = document.createElement("div");
-    innerDiv.innerHTML = "Inside container";
+    innerDiv.innerHTML = "Subtask reminder";
     innerDiv.style.backgroundColor = bgColor;
     innerDiv.style.color = "black";
     innerDiv.style.padding = "10px";
@@ -68,12 +68,12 @@ function addDiv() {
   }
 
   const addGoldInnerDivButton = document.createElement("button");
-  addGoldInnerDivButton.innerHTML = "Add  GOLDEN  inside container";
+  addGoldInnerDivButton.innerHTML = "Add  GOLDEN  subtask reminder";
   newDiv.append(addGoldInnerDivButton);
   addGoldInnerDivButton.addEventListener("click", () => addInnerDiv("gold"));
 
   const addVioletInnerDivButton = document.createElement("button");
-  addVioletInnerDivButton.innerHTML = "Add  VIOLET  inside container";
+  addVioletInnerDivButton.innerHTML = "Add  VIOLET  subtask reminder";
   newDiv.append(addVioletInnerDivButton);
   addVioletInnerDivButton.addEventListener("click", () =>
     addInnerDiv("violet")
@@ -96,6 +96,5 @@ function changer() {
 function back() {
   document.querySelector(".inputarea").style.backgroundColor = "#ffa360";
   document.querySelector("#back").style.backgroundColor = "lightgray";
-  document.querySelector(".inputarea").innerHTML =
-    "This is input container example";
+  document.querySelector(".inputarea").innerHTML = "This is input task example";
 }
